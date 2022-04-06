@@ -19,7 +19,7 @@ class Main : JavaPlugin() {
             DONE:
 
             NOT DONE:
-                - Staff mode (Invisibility, fly, items)
+                - Staff mode (Invisibility/vanish, fly, items)
                 - Freeze (Command and freeze wand in staff mode)
                 - Open inventory (Command and wand in staff mode) with permission for being able to edit it
                 - Knockback Stick (Extra, useful to check if the player has no kb)
