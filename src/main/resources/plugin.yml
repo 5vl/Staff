@@ -4,3 +4,6 @@ main: me.fivevl.staff.Main
 api-version: 1.18
 authors: [ 5vl ]
 description: A staffing plugin.
+commands:
+  staffmode:
+    description: The command to go into staffmode.

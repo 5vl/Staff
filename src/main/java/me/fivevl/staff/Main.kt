@@ -1,10 +1,12 @@
 package me.fivevl.staff
 
+import me.fivevl.staff.commands.StaffModeCommand
 import org.bukkit.plugin.java.JavaPlugin
 
 class Main : JavaPlugin() {
     override fun onEnable() {
         logger.info("Staff plugin enabled.")
+        getCommand("staffmode")!!.setExecutor(StaffModeCommand())
     }
 
     override fun onDisable() {
