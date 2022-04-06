@@ -1,0 +1,6 @@
+name: Staff
+version: '${project.version}'
+main: me.fivevl.staff.Main
+api-version: 1.18
+authors: [ 5vl ]
+description: A staffing plugin.
