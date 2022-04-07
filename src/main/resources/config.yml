@@ -1,2 +1,13 @@
-must-be-player: "&cYou must be a player to use this command!"
-no-permission: "&cYou don't have permission to use this command!"
+must-be-player: "&cYou must be a player to use this command!" # Message shown when a player tries to use a command that requires them to be a player
+no-permission: "&cYou don't have permission to use this command!" # Message shown when a player tries to use a command that they don't have permission to use
+toggle-staffmode: "&aToggled staffmode!" # Message shown when a player toggles staffmode
+staffmode-hotbar: # List of items to give the player when they toggle staffmode, available items: "AIR", "DISABLE_STAFFMODE", "FREEZE_WAND", "INVENTORY_WAND", "KB_STICK", "VANISH_ITEM"
+  1: "AIR"
+  2: "AIR"
+  3: "AIR"
+  4: "AIR"
+  5: "AIR"
+  6: "AIR"
+  7: "AIR"
+  8: "AIR"
+  9: "AIR"

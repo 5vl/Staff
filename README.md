@@ -11,9 +11,11 @@ I made this plugin by request of a friend, and because I didn't have anything to
 - /staffmode - staff.staffmode
 - /freeze - staff.freeze
 - /openinv - staff.openinv
+- /vanish - /v - staff.vanish
 
 # Staff mode items:
-- Disable staffmode - staff.staffmode
+- Disable staffmode item - staff.staffmode
 - Freeze wand - staff.freeze.wand
 - Inventory wand - staff.openinv.wand
 - Knockback Stick - staff.kbstick
+- Vanish item - staff.vanish.item

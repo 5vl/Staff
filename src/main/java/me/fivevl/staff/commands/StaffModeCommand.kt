@@ -18,6 +18,7 @@ class StaffModeCommand : CommandExecutor {
             p.sendMessage(Utils.hex(Utils.getPlaceholders(p, Config.noPermission!!)))
             return true
         }
+        Utils.toggleStaffmode(p)
         return true
     }
 }
