@@ -1,7 +1,9 @@
 package me.fivevl.staff
 
 
+import me.clip.placeholderapi.PlaceholderAPI
 import net.md_5.bungee.api.ChatColor
+import org.bukkit.entity.Player
 import java.util.regex.Pattern
 
 object Utils {
@@ -16,5 +18,8 @@ object Utils {
             match = pattern.matcher(s2)
         }
         return ChatColor.translateAlternateColorCodes('&', s2)
+    }
+    fun getPlaceholders(p: Player?, s: String): String {
+        return PlaceholderAPI.setPlaceholders(p, s)
     }
 }
