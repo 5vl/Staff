@@ -2,6 +2,7 @@ package me.fivevl.staff
 
 import me.clip.placeholderapi.PlaceholderAPI
 import net.md_5.bungee.api.ChatColor
+import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
@@ -9,7 +10,9 @@ import org.bukkit.inventory.PlayerInventory
 import java.util.regex.Pattern
 
 object Utils {
+    var instance: Main? = null
     private val inStaffmode = HashMap<Player, PlayerInventory>()
+    val inVanish = ArrayList<Player>()
     @Suppress("deprecation")
     fun hex(s: String): String {
         var s2 = s
@@ -46,5 +49,21 @@ object Utils {
             }
         }
         p.sendMessage(hex(getPlaceholders(p, Config.toggleStaffmode!!)))
+    }
+
+    fun toggleVanish(p: Player) {
+        if (inVanish.contains(p)) {
+            for (ps in Bukkit.getOnlinePlayers()) {
+                ps.showPlayer(instance!!, p)
+            }
+            inVanish.remove(p)
+            p.sendMessage(hex(getPlaceholders(p, Config.toggleVanish!!)))
+        } else {
+            for (ps in Bukkit.getOnlinePlayers()) {
+                ps.hidePlayer(instance!!, p)
+            }
+            inVanish.add(p)
+            p.sendMessage(hex(getPlaceholders(p, Config.toggleVanish!!)))
+        }
     }
 }

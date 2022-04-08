@@ -1,13 +1,20 @@
 package me.fivevl.staff
 
 import me.fivevl.staff.commands.StaffModeCommand
+import me.fivevl.staff.listeners.JoinListener
+import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 
 class Main : JavaPlugin() {
     override fun onEnable() {
+        Utils.instance = this
+
         saveDefaultConfig()
         Config.config = config
+
         getCommand("staffmode")!!.setExecutor(StaffModeCommand())
+
+        Bukkit.getPluginManager().registerEvents(JoinListener(), this)
         logger.info("Staff plugin enabled.")
     }
 
@@ -20,6 +27,7 @@ class Main : JavaPlugin() {
         FEATURES:
             DONE:
                 - PlaceholderAPI support
+                - Config
             NOT DONE:
                 - Staff mode (Invisibility/vanish, fly, items)
                 - Freeze (Command and freeze wand in staff mode)

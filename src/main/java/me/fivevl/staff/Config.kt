@@ -12,4 +12,5 @@ object Config {
             put(it.toInt(), config?.getString("staffmode-hotbar.$it")!!)
         }
     }
+    val toggleVanish = config?.getString("toggle-vanish")
 }

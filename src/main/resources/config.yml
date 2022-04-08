@@ -1,6 +1,11 @@
+# In this section of the config you can change all the messages in the plugin.
 must-be-player: "&cYou must be a player to use this command!" # Message shown when a player tries to use a command that requires them to be a player
 no-permission: "&cYou don't have permission to use this command!" # Message shown when a player tries to use a command that they don't have permission to use
 toggle-staffmode: "&aToggled staffmode!" # Message shown when a player toggles staffmode
+toggle-vanish: "&aToggled vanish!" # Message shown when a player toggles vanish
+toggle-fly: "&aToggled fly!" # Message shown when a player toggles fly
+
+# In this section of the config you can change the items given to you in staffmode.
 staffmode-hotbar: # List of items to give the player when they toggle staffmode, available items: "AIR", "DISABLE_STAFFMODE", "FREEZE_WAND", "INVENTORY_WAND", "KB_STICK", "VANISH_ITEM"
   1: "AIR"
   2: "AIR"
