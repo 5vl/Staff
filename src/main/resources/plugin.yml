@@ -7,3 +7,7 @@ description: A staffing plugin.
 commands:
   staffmode:
     description: The command to go into staffmode.
+  vanish:
+    description: Vanish from all players!
+    aliases:
+      - v

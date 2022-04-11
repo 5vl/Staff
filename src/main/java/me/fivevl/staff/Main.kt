@@ -1,6 +1,7 @@
 package me.fivevl.staff
 
 import me.fivevl.staff.commands.StaffModeCommand
+import me.fivevl.staff.commands.VanishCommand
 import me.fivevl.staff.listeners.JoinListener
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
@@ -13,6 +14,7 @@ class Main : JavaPlugin() {
         Config.config = config
 
         getCommand("staffmode")!!.setExecutor(StaffModeCommand())
+        getCommand("vanish")!!.setExecutor(VanishCommand())
 
         Bukkit.getPluginManager().registerEvents(JoinListener(), this)
         logger.info("Staff plugin enabled.")
