@@ -11,7 +11,6 @@ class Main : JavaPlugin() {
         Utils.instance = this
 
         saveDefaultConfig()
-        Config.config = config
 
         getCommand("staffmode")!!.setExecutor(StaffModeCommand())
         getCommand("vanish")!!.setExecutor(VanishCommand())

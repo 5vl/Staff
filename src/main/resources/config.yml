@@ -16,3 +16,4 @@ staffmode-hotbar: # List of items to give the player when they toggle staffmode,
   7: "AIR"
   8: "AIR"
   9: "AIR"
+disable-staffmode-item: "&aDisable staffmode" # Item name of the item that disables staffmode
