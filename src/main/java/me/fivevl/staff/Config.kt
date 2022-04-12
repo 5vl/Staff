@@ -8,8 +8,10 @@ object Config {
     }
     val mustBePlayer = getConfig().getString("must-be-player")!!
     val noPermission = getConfig().getString("no-permission")!!
-    val toggleStaffmode = getConfig().getString("toggle-staffmode")!!
-    val toggleVanish = getConfig().getString("toggle-vanish")!!
+    val toggleStaffmodeOn = getConfig().getString("toggle-staffmode-on")!!
+    val toggleStaffmodeOff = getConfig().getString("toggle-staffmode-off")!!
+    val toggleVanishOn = getConfig().getString("toggle-vanish-on")!!
+    val toggleVanishOff = getConfig().getString("toggle-vanish-off")!!
     val staffmodeHotbar = HashMap<Int, String>().apply {
         getConfig().getConfigurationSection("staffmode-hotbar")?.getKeys(false)?.forEach {
             put(it.toInt(), getConfig().getString("staffmode-hotbar.$it")!!)

@@ -29,6 +29,7 @@ class Main : JavaPlugin() {
             DONE:
                 - PlaceholderAPI support
                 - Config
+                - Vanish command
             NOT DONE:
                 - Staff mode (Invisibility/vanish, fly, items)
                 - Freeze (Command and freeze wand in staff mode)

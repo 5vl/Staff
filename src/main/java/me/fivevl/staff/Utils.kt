@@ -34,6 +34,7 @@ object Utils {
             p.inventory.clear()
             p.inventory.contents = inStaffmode[p]!!.contents
             inStaffmode.remove(p)
+            p.sendMessage(hex(getPlaceholders(p, Config.toggleStaffmodeOff)))
         } else {
             inStaffmode[p] = p.inventory
             p.inventory.clear()
@@ -48,8 +49,8 @@ object Utils {
                 }
                 p.inventory.setItem(i - 1, item)
             }
+            p.sendMessage(hex(getPlaceholders(p, Config.toggleStaffmodeOn)))
         }
-        p.sendMessage(hex(getPlaceholders(p, Config.toggleStaffmode)))
     }
     fun toggleVanish(p: Player) {
         if (inVanish.contains(p)) {
@@ -57,13 +58,14 @@ object Utils {
                 ps.showPlayer(instance!!, p)
             }
             inVanish.remove(p)
+            p.sendMessage(hex(getPlaceholders(p, Config.toggleVanishOff)))
         } else {
             for (ps in Bukkit.getOnlinePlayers()) {
                 ps.hidePlayer(instance!!, p)
             }
             inVanish.add(p)
+            p.sendMessage(hex(getPlaceholders(p, Config.toggleVanishOn)))
         }
-        p.sendMessage(hex(getPlaceholders(p, Config.toggleVanish)))
     }
 
     fun getConfig(): FileConfiguration {
