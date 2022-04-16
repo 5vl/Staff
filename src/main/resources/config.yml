@@ -1,13 +1,13 @@
 # In this section of the config you can change all the messages in the plugin.
 # For messages please use the minimessage formatting, see https://docs.adventure.kyori.net/minimessage/format.html#minimessage-format
-must-be-player: "<red>You must be a player to use this command!" # Message shown when a player tries to use a command that requires them to be a player
-no-permission: "<red>You don't have permission to use this command!" # Message shown when a player tries to use a command that they don't have permission to use
-toggle-staffmode-on: "<green>Toggled staffmode on!" # Message shown when a player toggles staffmode on
-toggle-staffmode-off: "<red>Toggled staffmode off!" # Message shown when a player toggles staffmode off
-toggle-vanish-on: "<green>Toggled vanish on!" # Message shown when a player toggles vanish on
-toggle-vanish-off: "<red>Toggled vanish off!" # Message shown when a player toggles vanish off
-toggle-fly-on: "<green>Toggled fly on!" # Message shown when a player toggles fly on
-toggle-fly-off: "<red>Toggled fly off!" # Message shown when a player toggles fly off
+must-be-player: "<red>You must be a player to use this command!</red>" # Message shown when a player tries to use a command that requires them to be a player
+no-permission: "<red>You do not have permission to use this command!</red>" # Message shown when a player tries to use a command that they don't have permission to use
+toggle-staffmode-on: "<green>Toggled staffmode on!</green>" # Message shown when a player toggles staffmode on
+toggle-staffmode-off: "<red>Toggled staffmode off!</red>" # Message shown when a player toggles staffmode off
+toggle-vanish-on: "<green>Toggled vanish on!</green>" # Message shown when a player toggles vanish on
+toggle-vanish-off: "<red>Toggled vanish off!</red>" # Message shown when a player toggles vanish off
+toggle-fly-on: "<green>Toggled fly on!</green>" # Message shown when a player toggles fly on
+toggle-fly-off: "<red>Toggled fly off!</red>" # Message shown when a player toggles fly off
 
 # In this section of the config you can change the items given to you in staffmode. Please do not use colors here.
 staffmode-hotbar: # List of items to give the player when they toggle staffmode, available items: "AIR", "DISABLE_STAFFMODE", "FREEZE_WAND", "INVENTORY_WAND", "KB_STICK", "VANISH_ITEM"
@@ -20,7 +20,7 @@ staffmode-hotbar: # List of items to give the player when they toggle staffmode,
   7: "KB_STICK"
   8: "AIR"
   9: "VANISH_ITEM"
-# For items, please use & color codes.
+# For items, please use `&` color codes.
 items:
     DISABLE_STAFFMODE:
         name: "&cDisable Staffmode"

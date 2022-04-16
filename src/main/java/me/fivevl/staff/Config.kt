@@ -18,4 +18,8 @@ object Config {
         }
     }
     val disableStaffmodeItem = getConfig().getString("items.DISABLE_STAFFMODE")!!
+    val freezeWandItem = getConfig().getString("items.FREEZE_WAND")!!
+    val inventoryWandItem = getConfig().getString("items.INVENTORY_WAND")!!
+    val kbStickItem = getConfig().getString("items.KB_STICK")!!
+    val vanishItem = getConfig().getString("items.VANISH_ITEM")!!
 }
