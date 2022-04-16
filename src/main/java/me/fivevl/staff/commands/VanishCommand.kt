@@ -10,12 +10,12 @@ import org.bukkit.entity.Player
 class VanishCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         if (sender !is Player) {
-            sender.sendMessage(Utils.hex(Utils.getPlaceholders(null, Config.mustBePlayer)))
+            sender.sendMessage(Utils.mm(Utils.getPlaceholders(null, Config.mustBePlayer)))
             return true
         }
         val p = sender.player!!
         if (!p.hasPermission("staff.vanish")) {
-            p.sendMessage(Utils.hex(Utils.getPlaceholders(p, Config.noPermission)))
+            p.sendMessage(Utils.mm(Utils.getPlaceholders(p, Config.noPermission)))
             return true
         }
         Utils.toggleVanish(p)

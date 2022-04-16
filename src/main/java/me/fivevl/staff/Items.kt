@@ -14,6 +14,7 @@ enum class Items(val item: ItemStack) {
 private fun getStaffmodeItem(): ItemStack {
     val item = ItemStack(Material.LIME_DYE)
     val meta = item.itemMeta
-    meta.setDisplayName(Utils.hex(Utils.getPlaceholders(null, Config.disableStaffmodeItem)))
+    meta.setDisplayName(Utils.color(Utils.getPlaceholders(null, Config.disableStaffmodeItem)))
+    item.itemMeta = meta
     return item
 }

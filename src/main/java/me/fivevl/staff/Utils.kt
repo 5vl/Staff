@@ -1,30 +1,34 @@
 package me.fivevl.staff
 
 import me.clip.placeholderapi.PlaceholderAPI
-import net.md_5.bungee.api.ChatColor
+import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.Bukkit
+import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.PlayerInventory
-import java.util.regex.Pattern
 
 object Utils {
     var instance: Main? = null
     val inStaffmode = HashMap<Player, PlayerInventory>()
     val inVanish = ArrayList<Player>()
     @Suppress("deprecation")
-    fun hex(s: String): String {
-        var s2 = s
-        val pattern = Pattern.compile("#[a-fA-F0-9]{6}")
+    fun mm(s: String): Component {
+        /*val pattern = Pattern.compile("#[a-fA-F0-9]{6}")
         var match = pattern.matcher(s)
         while (match.find()) {
             val color = s.substring(match.start(), match.end())
             s2 = s2.replace(color, ChatColor.of(color).toString())
             match = pattern.matcher(s2)
         }
-        return ChatColor.translateAlternateColorCodes('&', s2)
+        return ChatColor.translateAlternateColorCodes('&', s2)*/
+        return MiniMessage.miniMessage().deserialize(s)
+    }
+    fun color(s: String): String {
+        return ChatColor.translateAlternateColorCodes('&', s)
     }
     fun getPlaceholders(p: Player?, s: String): String {
         return PlaceholderAPI.setPlaceholders(p, s)
@@ -34,7 +38,7 @@ object Utils {
             p.inventory.clear()
             p.inventory.contents = inStaffmode[p]!!.contents
             inStaffmode.remove(p)
-            p.sendMessage(hex(getPlaceholders(p, Config.toggleStaffmodeOff)))
+            p.sendMessage(mm(getPlaceholders(p, Config.toggleStaffmodeOff)))
         } else {
             inStaffmode[p] = p.inventory
             p.inventory.clear()
@@ -49,7 +53,7 @@ object Utils {
                 }
                 p.inventory.setItem(i - 1, item)
             }
-            p.sendMessage(hex(getPlaceholders(p, Config.toggleStaffmodeOn)))
+            p.sendMessage(mm(getPlaceholders(p, Config.toggleStaffmodeOn)))
         }
     }
     fun toggleVanish(p: Player) {
@@ -58,13 +62,13 @@ object Utils {
                 ps.showPlayer(instance!!, p)
             }
             inVanish.remove(p)
-            p.sendMessage(hex(getPlaceholders(p, Config.toggleVanishOff)))
+            p.sendMessage(mm(getPlaceholders(p, Config.toggleVanishOff)))
         } else {
             for (ps in Bukkit.getOnlinePlayers()) {
                 ps.hidePlayer(instance!!, p)
             }
             inVanish.add(p)
-            p.sendMessage(hex(getPlaceholders(p, Config.toggleVanishOn)))
+            p.sendMessage(mm(getPlaceholders(p, Config.toggleVanishOn)))
         }
     }
 

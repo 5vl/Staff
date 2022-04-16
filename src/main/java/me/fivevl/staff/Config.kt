@@ -17,5 +17,5 @@ object Config {
             put(it.toInt(), getConfig().getString("staffmode-hotbar.$it")!!)
         }
     }
-    val disableStaffmodeItem = getConfig().getString("disable-staffmode-item")!!
+    val disableStaffmodeItem = getConfig().getString("items.DISABLE_STAFFMODE")!!
 }
