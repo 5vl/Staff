@@ -13,3 +13,5 @@ commands:
     description: Vanish from all players!
     aliases:
       - v
+  invsee:
+    description: View someones inventory.

@@ -1,5 +1,6 @@
 package me.fivevl.staff
 
+import me.fivevl.staff.commands.InvseeCommand
 import me.fivevl.staff.commands.StaffModeCommand
 import me.fivevl.staff.commands.VanishCommand
 import me.fivevl.staff.listeners.JoinListener
@@ -14,6 +15,7 @@ class Main : JavaPlugin() {
 
         getCommand("staffmode")!!.setExecutor(StaffModeCommand())
         getCommand("vanish")!!.setExecutor(VanishCommand())
+        getCommand("invsee")!!.setExecutor(InvseeCommand())
 
         Bukkit.getPluginManager().registerEvents(JoinListener(), this)
         logger.info("Staff plugin enabled.")

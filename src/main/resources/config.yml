@@ -10,25 +10,30 @@ toggle-fly-on: "<green>Toggled fly on!</green>" # Message shown when a player to
 toggle-fly-off: "<red>Toggled fly off!</red>" # Message shown when a player toggles fly off
 
 # In this section of the config you can change the items given to you in staffmode. Please do not use colors here.
-staffmode-hotbar: # List of items to give the player when they toggle staffmode, available items: "AIR", "DISABLE_STAFFMODE", "FREEZE_WAND", "INVENTORY_WAND", "KB_STICK", "VANISH_ITEM"
+staffmode-hotbar: # List of items to give the player when they toggle staffmode, available items: "DISABLE_STAFFMODE", "FREEZE_WAND", "INVENTORY_WAND", "KB_STICK", "VANISH_ITEM"
   1: "DISABLE_STAFFMODE"
-  2: "AIR"
+  2: ""
   3: "FREEZE_WAND"
-  4: "AIR"
+  4: ""
   5: "INVENTORY_WAND"
-  6: "AIR"
+  6: ""
   7: "KB_STICK"
-  8: "AIR"
+  8: ""
   9: "VANISH_ITEM"
 # For items, please use `&` color codes.
 items:
-    DISABLE_STAFFMODE:
-        name: "&cDisable Staffmode"
-    FREEZE_WAND:
-        name: "&cFreeze Wand"
-    INVENTORY_WAND:
-        name: "&cInventory Wand"
-    KB_STICK:
-        name: "&cKnockback Stick"
-    VANISH_ITEM:
-        name: "&cVanish"
+  DISABLE_STAFFMODE:
+    item: "LIME_DYE"
+    name: "&cDisable Staffmode"
+  FREEZE_WAND:
+    item: "CHAIN"
+    name: "&bFreeze Wand"
+  INVENTORY_WAND:
+    item: "BLAZE_ROD"
+    name: "&cInventory Wand"
+  KB_STICK:
+    item: "STICK"
+    name: "&cKnockback Stick"
+  VANISH_ITEM:
+    item: "BARRIER"
+    name: "&rVanish"

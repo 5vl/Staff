@@ -6,14 +6,13 @@ import net.kyori.adventure.text.minimessage.MiniMessage
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.Material
-import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.entity.Player
+import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.ItemStack
-import org.bukkit.inventory.PlayerInventory
 
 object Utils {
     var instance: Main? = null
-    val inStaffmode = HashMap<Player, PlayerInventory>()
+    val inStaffmode = HashMap<Player, Inventory>()
     val inVanish = ArrayList<Player>()
     @Suppress("deprecation")
     fun mm(s: String): Component {
@@ -62,9 +61,5 @@ object Utils {
             inVanish.add(p)
             p.sendMessage(mm(getPlaceholders(p, Config.toggleVanishOn)))
         }
-    }
-
-    fun getConfig(): FileConfiguration {
-        return instance!!.config
     }
 }
