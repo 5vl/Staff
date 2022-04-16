@@ -2,6 +2,7 @@ package me.fivevl.staff.commands
 
 import me.fivevl.staff.Config
 import me.fivevl.staff.Utils
+import org.bukkit.Bukkit
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
@@ -22,6 +23,13 @@ class InvseeCommand : CommandExecutor {
             p.sendMessage(Utils.mm("<red><hover:show_text:Click me to insert command!><click:suggest_command:/invsee >Usage: /invsee <player></click></hover></red>"))
             return true
         }
+        val target = Bukkit.getPlayer(args[0])
+        if (target == null) {
+            p.sendMessage(Utils.mm(Utils.getPlaceholders(p, Config.playerNotFound)))
+            return true
+        }
+        p.openInventory(target.inventory)
+        Utils.inOtherInv.add(p)
         return true
     }
 }

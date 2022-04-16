@@ -14,6 +14,8 @@ object Utils {
     var instance: Main? = null
     val inStaffmode = HashMap<Player, Inventory>()
     val inVanish = ArrayList<Player>()
+    val inOtherInv = ArrayList<Player>()
+    val frozen = ArrayList<Player>()
     @Suppress("deprecation")
     fun mm(s: String): Component {
         return MiniMessage.miniMessage().deserialize(s)
@@ -36,11 +38,11 @@ object Utils {
             for (i: Int in Config.staffmodeHotbar.keys) {
                 var item = ItemStack(Material.AIR)
                 when (Config.staffmodeHotbar[i]) {
-                    "DISABLE_STAFFMODE" -> item = Items.DISABLE_STAFFMODE.item
-                    "FREEZE_WAND" -> item = Items.FREEZE_WAND.item
-                    "INVENTORY_WAND" -> item = Items.INVENTORY_WAND.item
-                    "KB_STICK" -> item = Items.KB_STICK.item
-                    "VANISH_ITEM" -> item = Items.VANISH_ITEM.item
+                    "DISABLE_STAFFMODE" -> if (p.hasPermission("staff.staffmode")) item = Items.DISABLE_STAFFMODE.item
+                    "FREEZE_WAND" -> if (p.hasPermission("staff.freeze.wand")) item = Items.FREEZE_WAND.item
+                    "INVENTORY_WAND" -> if (p.hasPermission("staff.invsee.wand")) item = Items.INVENTORY_WAND.item
+                    "KB_STICK" -> if (p.hasPermission("staff.kbstick")) item = Items.KB_STICK.item
+                    "VANISH_ITEM" -> if (p.hasPermission("staff.vanish.item")) item = Items.VANISH_ITEM.item
                 }
                 p.inventory.setItem(i - 1, item)
             }
@@ -60,6 +62,15 @@ object Utils {
             }
             inVanish.add(p)
             p.sendMessage(mm(getPlaceholders(p, Config.toggleVanishOn)))
+        }
+    }
+    fun toggleFreeze(p: Player) {
+        if (frozen.contains(p)) {
+            p.sendMessage(mm(getPlaceholders(p, Config.toggleFreezeOff)))
+            frozen.remove(p)
+        } else {
+            p.sendMessage(mm(getPlaceholders(p, Config.toggleFreezeOn)))
+            frozen.add(p)
         }
     }
 }

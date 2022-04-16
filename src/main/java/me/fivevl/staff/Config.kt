@@ -3,10 +3,14 @@ package me.fivevl.staff
 object Config {
     val mustBePlayer = Utils.instance!!.config.getString("must-be-player")!!
     val noPermission = Utils.instance!!.config.getString("no-permission")!!
+    val playerNotFound = Utils.instance!!.config.getString("player-not-found")!!
     val toggleStaffmodeOn = Utils.instance!!.config.getString("toggle-staffmode-on")!!
     val toggleStaffmodeOff = Utils.instance!!.config.getString("toggle-staffmode-off")!!
     val toggleVanishOn = Utils.instance!!.config.getString("toggle-vanish-on")!!
     val toggleVanishOff = Utils.instance!!.config.getString("toggle-vanish-off")!!
+    val toggleFreezeOn = Utils.instance!!.config.getString("toggle-freeze-on")!!
+    val toggleFreezeOff = Utils.instance!!.config.getString("toggle-freeze-off")!!
+    val currentlyFrozen = Utils.instance!!.config.getString("currently-frozen")!!
     val staffmodeHotbar = HashMap<Int, String>().apply {
         Utils.instance!!.config.getConfigurationSection("staffmode-hotbar")?.getKeys(false)?.forEach {
             put(it.toInt(), Utils.instance!!.config.getString("staffmode-hotbar.$it")!!)
